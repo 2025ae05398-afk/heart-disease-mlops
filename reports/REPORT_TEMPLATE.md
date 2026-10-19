@@ -1,6 +1,6 @@
 # End-to-End MLOps for Heart Disease Classification
 
-**Course:** AIMLCZG523 | **Student:** [Name/ID] | **Date:** [Date] | **Repository:** [URL]
+**Course:** AIMLCZG523 | **Student:** [KULDEEP SHARMA/2025AE05398] | **Date:** [19/10/2026] | **Repository:** [https://github.com/2025ae05398-afk/heart-disease-mlops]
 
 > Educational software demonstration only. Not a medical diagnosis.
 
