@@ -1,6 +1,6 @@
 # Heart Disease MLOps Project
 
-Runnable reference implementation for the AIMLCZG523 assignment: UCI dataset acquisition, EDA, preprocessing, Logistic Regression and Random Forest, stratified cross-validation, MLflow, FastAPI, pytest, Ruff, Docker, GitHub Actions, Kubernetes and Prometheus metrics.
+Runnable reference implementation for the Machine Learning Operations (MLOps) AIMLCZG523 Assignment 01 assignment: UCI dataset acquisition, EDA, preprocessing, Logistic Regression and Random Forest, stratified cross-validation, MLflow, FastAPI, pytest, Ruff, Docker, GitHub Actions, Kubernetes and Prometheus metrics.
 
 **Disclaimer:** Educational demonstration only. Not a medical device; never use for diagnosis or treatment decisions.
 
@@ -19,7 +19,7 @@ ruff check .
 uvicorn src.api:app --host 0.0.0.0 --port 8000
 ```
 
-Visit `http://127.0.0.1:8000/docs`, `GET /health`, and `GET /metrics`. `POST /predict` accepts one JSON object with every feature key shown in `artifacts/metadata.json`. Example for the common Cleveland feature schema:
+Open `http://127.0.0.1:8000/docs`, `GET /health`, and  `POST /predict` accepts one JSON object with every feature key shown in `artifacts/metadata.json`. Example for the common Cleveland feature schema:
 
 ```json
 {"age":63,"sex":1,"cp":3,"trestbps":145,"chol":233,"fbs":1,"restecg":0,"thalach":150,"exang":0,"oldpeak":2.3,"slope":0,"ca":0,"thal":1}
@@ -50,7 +50,7 @@ Build the image where your cluster can access it, then:
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 kubectl get pods,svc
-kubectl port-forward service/heart-disease-api 8000:80
+kubectl port-forward svc/heart-disease-api 8000:80
 ```
 
 For Minikube, you may need `minikube tunnel` or port-forwarding. The manifests are templates and do not constitute proof of a public cloud deployment.
