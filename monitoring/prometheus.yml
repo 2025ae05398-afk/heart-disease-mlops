@@ -4,5 +4,4 @@ scrape_configs:
   - job_name: heart-disease-api
     metrics_path: /metrics
     static_configs:
-      # For Prometheus running in Docker Compose on the same network, use api:8000.
-      - targets: ["api:8000"]
+      - targets: ["host.docker.internal:8000"]
