@@ -2,9 +2,6 @@ export PYTHONPATH=.
 
 uvicorn src.api:app --host 0.0.0.0 --port 8000
 
-docker build -t heart-disease-api:1.0 .
-docker run --rm -p 8000:8000 heart-disease-api:1.0
-
 
 minikube start
 minikube image build -t heart-disease-api:1.0 .
@@ -12,4 +9,6 @@ kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 kubectl get pods
 kubectl get services
-kubectl port-forward service/heart-disease-service 8000:8000
+
+kubectl port-forward svc/heart-disease-api 8000:80
+
