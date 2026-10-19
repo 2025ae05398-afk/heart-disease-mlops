@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    image: heart-disease-mlops:local
+    ports:
+      - "8000:8000"
+    environment:
+      LOG_LEVEL: INFO
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
